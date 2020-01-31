@@ -65,13 +65,17 @@ It is a best practice to use use Python virtual environments to isolate project-
 
 <details><summary><strong>Read more about Pipenv and Virtual Environments</strong></summary>
 
-> Pipenv is a production-ready tool that aims to bring the best of all packaging worlds to the Python world. It harnesses Pipfile, pip, and virtualenv into one single command.
+### Pipenv Features
+* Pipenv is a production-ready tool that aims to bring the best of all packaging worlds to the Python world. It harnesses Pipfile, pip, and virtualenv into one single command.
 
-> With pipenv you no longer need to use `pip` and `venv` separately.
+* Enables truly ***deterministic builds***, while specifying only what is needed.
+
+* With pipenv you no longer need to use `pip` and `venv` separately.
 
 
->  Setting a virtual environment to separate each project from affecting other projects and the rest of your operating system's a good idea. You may be making changes in your virtual environment that could have unintended consequences. 
+*  Setting a virtual environment to separate each project from affecting other projects and the rest of your operating system's a good idea. You may be making changes in your virtual environment that could have unintended consequences. 
 
+Learn more about Pipenv [here](https://pipenv-fork.readthedocs.io/en/latest/)
 </details>
 
 
