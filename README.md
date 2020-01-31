@@ -70,22 +70,12 @@ It is a best practice to use use Python virtual environments to isolate project-
 > With pipenv you no longer need to use `pip` and `venv` separately.
 
 
-> Using the system installed python is not a good idea as modifications to it's version and package dependancies can have undesireable effects. 
+>  Setting a virtual environment to separate each project from affecting other projects and the rest of your operating system's a good idea. You may be making changes in your virtual environment that could have unintended consequences. 
 
 </details>
 
 
-## Steps to run this code
-1. Clone the repository
-1. Install python packages
-1. Run unit-tests
-1. Run the code
 
-### 1. first clone the repo
-```sh
-git clone https://github.com/bee-travels/bee-travels-python.git
-```
-### 2. Install python packages
 
 
 
