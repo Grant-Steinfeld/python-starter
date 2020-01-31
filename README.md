@@ -82,7 +82,10 @@ Learn more about Pipenv [here](https://pipenv-fork.readthedocs.io/en/latest/)
 
 
 
-
+### Steps to run the currency exchange microservice
+1. a
+1. b
+1. c
 
 
 
