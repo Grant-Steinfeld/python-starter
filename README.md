@@ -89,6 +89,63 @@ cd bee-travels-python/src/currencyexchange
 pipenv install requests
 ```
 
+The output for installing `Requests` lib is:
+![requests install via pipenv](./doc/images/pipenv-install-requests.png)
+
+So great!  Now pipenv ran, installed `Requests` and created a `Pipfile` and a `Pipfile.lock` 
+
+Check!
+```sh
+pipenv check
+```
+
+Output should confirm all is good!
+
+![check with pipenv](./doc/images/pipenv-check.png)
+
+### setup development toolchain - add Unit-Test support - pytest
+```sh
+pipenv install --dev pytest
+```
+
+![install pytest with pipenv](./doc/images/pipenv-install-pytest.png)
+
+Good now unit test support is added!
+
+Next let's tackle other tools, like tox, flake8 and black
+
+```sh
+pipenv install --dev tox pre-commit flake8
+```
+
+![dev dep](./doc/images/dev-dependancies.png)
+
+```sh
+#pin black as it's beta
+pipenv install --dev black==19.10b0
+```
+
+![install pipenv black](./doc/images/pipenv-black.png)
+
+
+
+## install Git pre-commit hook
+```
+vi Pipfile
+
+# add [scripts] to pipfile for pre-commit hook
+
+
+
+[scripts]
+# Install the pre-commit hook
+setup_dev = "sh -c \"pre-commit install\""
+```
+
+### need a .pre-commit-config.yaml file
+
+
+
 
 #### TDD / development setup: Development tools:
 List of packages in Pipfile:
