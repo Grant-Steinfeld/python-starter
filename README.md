@@ -79,7 +79,27 @@ Learn more about Pipenv [here](https://pipenv-fork.readthedocs.io/en/latest/)
 </details>
 
 
+### setting up a Python Virtual Environment
+Since we will wrap a http request to a http endpoint we will naturally use the awesome
+python `Requests` library.
 
+At your command line
+```sh
+cd bee-travels-python/src/currencyexchange
+pipenv install requests
+```
+
+
+#### TDD / development setup: Development tools:
+List of packages in Pipfile:
+* unit testing
+    * `pytest`
+* linting and formatting
+    * `black`
+    * `flake8`
+* Git pre-commit hooks
+    *   `pre-commit`
+        * prevents committing unlinted & unformatted code
 
 
 # License
