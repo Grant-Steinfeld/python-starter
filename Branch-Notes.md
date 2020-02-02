@@ -16,3 +16,14 @@ install
 
 create python env
 
+activate 
+
+deactivate
+
+tox?
+
+003 tdd-tools
+
+pytests for unit-tests
+
+dir structure
