@@ -79,20 +79,27 @@ Learn more about Pipenv [here](https://pipenv-fork.readthedocs.io/en/latest/)
 </details>
 
 
-### setting up a Python Virtual Environment
-Since we will wrap a http request to a http endpoint we will naturally use the awesome
-python `Requests` library.
+### Intializing a `pipenv` Python Virtual Environment
 
-At your command line
+How does one setup a Python Virtual Environment using `pipenv`?
+
+Option A:
+> Installing a pypi library with `pipenv` will automatically create a virtual enviroment
+
+Here is how to do it.
+
+What library to start off with?  Since this microservice will make http requests to an external 3rd party REST endpoint, we decided to use the popular  `requests` library.
+
+At your command line cd to the root directoryof the currency exchange.
 ```sh
-cd bee-travels-python/src/currencyexchange
+cd src/currencyexchange
 pipenv install requests
 ```
 
-The output for installing `Requests` lib is:
+The output for installing `requests` lib is:
 ![requests install via pipenv](./doc/images/pipenv-install-requests.png)
 
-So great!  Now pipenv ran, installed `Requests` and created a `Pipfile` and a `Pipfile.lock` 
+So great!  Now pipenv ran, installed `requests` and created a `Pipfile` and a `Pipfile.lock` 
 
 Check!
 ```sh
@@ -103,7 +110,9 @@ Output should confirm all is good!
 
 ![check with pipenv](./doc/images/pipenv-check.png)
 
+You can also confirm the virtual environment is setup by confirming a new file called `Pipfile` exists at the root directory. 
 
+Even though the `pipenv` virtual environment is setup, you still need to ***activate*** it.  This is simplly
 
 
 ## Anatomy of this application
