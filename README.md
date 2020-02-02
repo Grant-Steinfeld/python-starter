@@ -103,59 +103,14 @@ Output should confirm all is good!
 
 ![check with pipenv](./doc/images/pipenv-check.png)
 
-### setup development toolchain - add Unit-Test support - pytest
-```sh
-pipenv install --dev pytest
-```
-
-![install pytest with pipenv](./doc/images/pipenv-install-pytest.png)
-
-Good now unit test support is added!
-
-Next let's tackle other productivity and beautification/stadardization tools, like tox, flake8 and black
-
-```sh
-pipenv install --dev tox pre-commit flake8
-```
-
-![dev dep](./doc/images/dev-dependancies.png)
-
-```sh
-#pin black as it's beta
-pipenv install --dev black==19.10b0
-```
-
-![install pipenv black](./doc/images/pipenv-black.png)
-
-
-Great now we have our toolbelt populated with some powerful weapons to tackle the taks ahead = writing correct, elegant code that does not violate anti-patterns and code smells
-
-<details><summary><strong>What are atipatterns & code `smells`</strong></summary>
-
-> Anti-Patterns
-...
-
-> Code Smells
-
-* D.R.Y
-* Long methods
-* Flocking Code - horribly nested if statements
-* non-determanistic function in a parallel world
-
-</details>
 
 
 
+## Anatomy of this application
+### Key runtime packages
+* HTTP Client
+  * `requests` http library to call external http API endpoints
 
-
-
-#### TDD / development setup: Development tools:
-List of packages in Pipfile:
-* unit testing
-    * `pytest`
-* linting and formatting
-    * `black`
-    * `flake8`
 
 
 # License
