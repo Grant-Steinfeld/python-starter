@@ -112,7 +112,7 @@ pipenv install --dev pytest
 
 Good now unit test support is added!
 
-Next let's tackle other tools, like tox, flake8 and black
+Next let's tackle other productivity and beautification/stadardization tools, like tox, flake8 and black
 
 ```sh
 pipenv install --dev tox pre-commit flake8
@@ -128,51 +128,23 @@ pipenv install --dev black==19.10b0
 ![install pipenv black](./doc/images/pipenv-black.png)
 
 
+Great now we have our toolbelt populated with some powerful weapons to tackle the taks ahead = writing correct, elegant code that does not violate anti-patterns and code smells
 
-## install Git pre-commit hook
-```
-vi Pipfile
+<details><summary><strong>What are atipatterns & code `smells`</strong></summary>
 
-# add [scripts] to pipfile for pre-commit hook
+> Anti-Patterns
+...
+
+> Code Smells
+
+* D.R.Y
+* Long methods
+* Flocking Code - horribly nested if statements
+* non-determanistic function in a parallel world
+
+</details>
 
 
-
-[scripts]
-# Install the pre-commit hook
-setup_dev = "sh -c \"pre-commit install\""
-```
-
-### need a .pre-commit-config.yaml file
-```
-vim .pre-commit-config.yaml
-```
-add contents
-
-```
-repos:
-  - repo: https://github.com/ambv/black
-    rev: stable
-    hooks:
-      - id: black
-        language_version: python3.6
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.2.3
-    hooks:
-      - id: check-json
-      - id: check-merge-conflict
-      - id: check-symlinks
-      - id: check-yaml
-      - id: debug-statements
-      - id: end-of-file-fixer
-      - id: flake8
-      - id: trailing-whitespace
-  - repo: https://github.com/prettier/prettier
-    rev: 1.18.2
-    hooks:
-      - id: prettier
-        exclude: 'package(?:-lock)?\.json'
-
-```
 
 
 
@@ -184,9 +156,6 @@ List of packages in Pipfile:
 * linting and formatting
     * `black`
     * `flake8`
-* Git pre-commit hooks
-    *   `pre-commit`
-        * prevents committing unlinted & unformatted code
 
 
 # License
