@@ -6,4 +6,4 @@ dist/
 .*.swp
 .tox/
 Pipfile.lock
-scratch
+scratch.md
