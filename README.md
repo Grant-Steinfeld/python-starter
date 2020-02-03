@@ -139,6 +139,13 @@ pipenv shell
 
 To exit the `Pipenv` Python Virtual environment simply type `exit`
 
+### Setting up tooling for Testing
+
+#### Setting up unit-testing - pytest framework
+
+```sh
+pipenv install --dev pytest
+```
 
 
 
