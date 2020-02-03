@@ -141,12 +141,12 @@ To exit the `Pipenv` Python Virtual environment simply type `exit`
 
 ### Setting up tooling for Testing
 
-#### Setting up unit-testing - pytest framework
+#### Setting up the pytest unit-test framework
 
 ```sh
 pipenv install --dev pytest
 ```
-
+`pytest` is used to write tests first and begin our journey towards Test Driven Development!
 
 
 
