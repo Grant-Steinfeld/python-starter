@@ -142,11 +142,29 @@ To exit the `Pipenv` Python Virtual environment simply type `exit`
 ### Setting up tooling for Testing
 
 #### Setting up the pytest unit-test framework
+>  pytest is a no-boilerplate alternative to Python’s standard unittest module
 
 ```sh
 pipenv install --dev pytest
 ```
-`pytest` is used to write tests first and begin our journey towards Test Driven Development!
+`pytest` is used to write tests first and begin our journey towards Test Driven Development, been a fully-featured and extensible test tool, it boasts a simple syntax. Creating a test suite is as easy as writing a module with a couple of functions:
+
+```python
+#contents of tests/unit/test_sample.py
+def plusOne(x):
+    return x + 1
+
+def test_simple():
+    assert plusOne(7) == 8
+```
+
+the test is run by running the pytest command.
+```sh
+pytest tests/unit/test_sample.py 
+```
+
+![pytest running sample test in pipenv](./doc/images/pytest-running-test-in-pipenv.png)
+
 
 
 
