@@ -83,23 +83,39 @@ Learn more about Pipenv [here](https://pipenv-fork.readthedocs.io/en/latest/)
 
 How does one setup a Python Virtual Environment using `pipenv`?
 
-Option A:
-> Installing a pypi library with `pipenv` will automatically create a virtual enviroment
-
-Here is how to do it.
-
-What library to start off with?  Since this microservice will make http requests to an external 3rd party REST endpoint, we decided to use the popular  `requests` library.
-
-At your command line cd to the root directoryof the currency exchange.
+#### What is a virutal env
+It's a copy of a physically installed version of python already have, so say you have python3 install via brew or some other method, you can find this by typing
 ```sh
-cd src/currencyexchange
-pipenv install requests
+which python3
+echo '/usr/local/bin/python3'
 ```
 
-The output for installing `requests` lib is:
-![requests install via pipenv](./doc/images/pipenv-install-requests.png)
 
-So great!  Now pipenv ran, installed `requests` and created a `Pipfile` and a `Pipfile.lock` 
+#### You may be asking yourself where your new virtual environment is stored?  
+Ordinarilly, by default, the `pipenv` virutal enviroments is written to  a global (your user's home ) dirctory.  The issue here is if you move your project directory this will corrupt the virutal environment.
+
+So never fear!  
+
+```sh
+
+export PIPENV_VENV_IN_PROJECT=1
+# save this line to your ~/.bashrc or ~/.zshrc or equivalent
+```
+
+### Creating a new Pipenv Python3 Virtual Environment
+
+
+At your command line `cd` to the `root directory` of the currency exchange.
+```sh
+cd src/currencyexchange
+pipenv install --three
+```
+You should now confirm the new local to your project, `Pipenv` Python Virtual Environment by output similar to this:
+
+![check with pipenv](./doc/images/pipenv-install-three.png)
+
+
+So great!  Now pipenv created a virtual environment and created a `Pipfile` and a `Pipfile.lock` 
 
 Check!
 ```sh
@@ -112,13 +128,18 @@ Output should confirm all is good!
 
 You can also confirm the virtual environment is setup by confirming a new file called `Pipfile` exists at the root directory. 
 
-Even though the `pipenv` virtual environment is setup, you still need to ***activate*** it.  This is simplly
+Even though the `pipenv` virtual environment is setup, you still need to ***activate*** it.  This is simply done by running:
+
+```sh
+pipenv shell
+```
+
+![activate pipenv](./doc/images/pipenv-activate-shell.png)
 
 
-## Anatomy of this application
-### Key runtime packages
-* HTTP Client
-  * `requests` http library to call external http API endpoints
+To exit the `Pipenv` Python Virtual environment simply type `exit`
+
+
 
 
 
