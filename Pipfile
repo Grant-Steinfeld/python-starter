@@ -5,6 +5,8 @@ verify_ssl = true
 
 [dev-packages]
 pytest = "*"
+flake8 = "*"
+black = "==19.10b0"
 
 [packages]
 

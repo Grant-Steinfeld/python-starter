@@ -166,6 +166,28 @@ pytest tests/unit/test_sample.py
 ![pytest running sample test in pipenv](./doc/images/pytest-running-test-in-pipenv.png)
 
 
+### Code stylers and formatters
+`Flake8`  is a command-line utility for enforcing style consistency across Python projects.
+<details><summary><strong>learn more about flake8</strong></summary>
+
+> [Flake8](https://flake8.pycqa.org/en/latest/index.html), by default it includes lint checks provided by the PyFlakes project, PEP-0008 inspired style checks provided by the PyCodeStyle project, and McCabe complexity checking provided by the McCabe project. It will also run third-party extensions if they are found and installed.
+</details>
+
+`Black`  is a Python formatting tool.
+<details><summary><strong>learn more about Black</strong></summary>
+> By using Black, you agree to cede control over minutiae of hand-formatting. In return, Black gives you speed, determinism, and freedom from pycodestyle nagging about formatting. You will save time and mental energy for more important matters.
+
+> Black makes code review faster by producing the smallest diffs possible. Blackened code looks the same regardless of the project you’re reading. Formatting becomes transparent after a while and you can focus on the content instead.
+
+[Read the Black documentation](https://black.readthedocs.io/en/stable/) for more information
+</details>
+
+To install these:
+```sh
+pipenv install --dev flake8 black==19.10b0
+```
+
+
 
 
 # License
