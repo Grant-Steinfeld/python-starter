@@ -187,8 +187,23 @@ To install these:
 pipenv install --dev flake8 black==19.10b0
 ```
 
+### Version Control Integration - black + flake8 with git pre-commit hooks
 
+#### add [scripts] block to pipfile for pre-commit hook
 
+``` bash
+
+[scripts]
+# Install the pre-commit hook
+setup_dev = "sh -c \"pre-commit install\""
+```
+<details><summary><strong>Learn more about pre-commit</strong></summary>
+
+> "Git hook scripts are useful for identifying simple issues before submission to code review. We run our hooks on every commit to automatically point out issues in code such as missing semicolons, trailing whitespace, and debug statements. By pointing these issues out before code review, this allows a code reviewer to focus on the architecture of a change while not wasting time with trivial style nitpicks."
+
+[quote from](https://pre-commit.com/)
+
+</details>
 
 # License
 
