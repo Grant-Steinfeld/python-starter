@@ -251,15 +251,111 @@ run:
 git commit README.md -m "test commit"
 ```
 
+> TIP! If this is the first time you run this, it will take 5-9 minutes depending on your local laptop or workstation's cpu/RAM horsepower.
+
 You should see something like this output in your terminal window.
 
 ![pre-commit hook runs for the first time](./doc/images/pre-commit-hook-first-time-output.jpg)
 
 Yay!!!
 
-Normally when you commit a file the output is less daunting and much faster!
+After you've run pre-commit the first time, subsequent commit's will be `fast` ( seconds ).
+
+The output is less verbose and like I said, it will be much much faster!
 
 ![pre-commit hook running thereafter](./doc/images/pre-commit-hook-normal-run.png)
+
+## Start Test Driven Development
+
+### Red-Green-Refactoring.
+
+There are 5 basic steps as illustrated in Figure 1. below.
+
+![5 steps Red-Green-Refactor cycle of Test Driven Devlopment](./doc/images/tdd-red-green-refactoring-v2.jpeg)
+
+**_Figure 1. The 5 stages in the Red-Green-Refactor software development cycle_**
+
+Requests originate from the BDD / Agile Design phase/thinking sessions.
+
+Common requests are new feature stories or issue/bug fixes.
+
+These are the 5 steps:
+
+1. Pick a request from your project management system [5]
+
+   1. Action it! by Read, understand the request
+
+1. Write a test to reflect the requirement
+   1. run test it must fail!! `(Red)`
+1. Write the code
+   1. run test - code until test passes `(Green)`
+1. refine, cleanup code `(Refactor)`
+   1. run test - if fails continue to refactor till it passes
+1. rinse, lather, repeat.
+
+### Let's begin TDD!!!
+
+## Your first test!
+
+#### requirement
+
+> Get Currency Name and Code given a well known country that does exist, e.g. South Africa
+
+```sh
+#cd to root of this repo
+pwd
+#expect something like this
+echo './bee-travels-python/src/currencyexchange'
+
+vi tests/unit/CurrencyCodeHandler_test.py
+```
+
+Add test code like this:
+
+```python
+import pytest
+
+def test_GetCurrencyNameAndCodeForRealCountry():
+    expected_ = {
+      'country': 'South Africa',
+      'currencyName': 'South African rand',
+      'currencyCode': 'ZAR',
+    }
+    actual_ = app.getCurrencyNameAndCode('South Africa')
+
+    assert actual_ == expected_
+
+```
+
+### lets run the test!
+
+```sh
+pytest tests/unit/CurrencyCodeHandler_test.py
+```
+
+since no code has been implemented yet, we expect this to fail `(Red)`, and indeed it does!
+
+![unit-test written first fails as expected](doc/images/tdd-test-written-first-fails-output.png)
+
+Great now it's time to implement the application code and try to get the test to pass `(Green)`
+
+> implement code
+
+> green
+
+> refactor
+
+That's it, keep on hacking the TDD way!
+
+## Foot notes
+
+[5] Project management tool include:
+
+- Jira
+- Pivotal Tracker
+- ZenHug
+- GitHub issues
+- other
 
 # License
 
