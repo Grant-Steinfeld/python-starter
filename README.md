@@ -293,60 +293,6 @@ These are the 5 steps:
    1. run test - if fails continue to refactor till it passes
 1. rinse, lather, repeat.
 
-### Let's begin TDD!!!
-
-## Your first test!
-
-#### requirement
-
-> Get Currency Name and Code given a well known country that does exist, e.g. South Africa
-
-```sh
-#cd to root of this repo
-pwd
-#expect something like this
-echo './bee-travels-python/src/currencyexchange'
-
-vi tests/unit/CurrencyCodeHandler_test.py
-```
-
-Add test code like this:
-
-```python
-import pytest
-
-def test_GetCurrencyNameAndCodeForRealCountry():
-    expected_ = {
-      'country': 'South Africa',
-      'currencyName': 'South African rand',
-      'currencyCode': 'ZAR',
-    }
-    actual_ = app.getCurrencyNameAndCode('South Africa')
-
-    assert actual_ == expected_
-
-```
-
-### lets run the test!
-
-```sh
-pytest tests/unit/CurrencyCodeHandler_test.py
-```
-
-since no code has been implemented yet, we expect this to fail `(Red)`, and indeed it does!
-
-![unit-test written first fails as expected](doc/images/tdd-test-written-first-fails-output.png)
-
-Great now it's time to implement the application code and try to get the test to pass `(Green)`
-
-> implement code
-
-> green
-
-> refactor
-
-That's it, keep on hacking the TDD way!
-
 ## Foot notes
 
 [5] Project management tool include:
@@ -356,6 +302,10 @@ That's it, keep on hacking the TDD way!
 - ZenHug
 - GitHub issues
 - other
+
+# Resources
+
+[Python Testing with pytest: Simple, Rapid, Effective, and Scalable.](https://pragprog.com/book/bopytest/python-testing-with-pytest) Okken, Brian. Pragmatic Bookshelf.
 
 # License
 
