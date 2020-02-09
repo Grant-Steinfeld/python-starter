@@ -1,6 +1,6 @@
-# Exchange Rate Currency Conversion Microservice
+# Modern Python3 Boilerplate with tooling
 
-This is a currency exchange microservice written using a Test Driven Development (TDD) approach in Python3.
+This is a template  to start a python project using a Test Driven Development (TDD) approach
 
 ## Install the pre-requisites
 
