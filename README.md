@@ -265,6 +265,26 @@ The output is less verbose and like I said, it will be much much faster!
 
 ![pre-commit hook running thereafter](./doc/images/pre-commit-hook-normal-run.png)
 
+## Logging
+
+Logs provide visibility into the behavior of a running app. Logs are the stream of aggregated, time-ordered events collected from the output streams of all running processes and backing services.
+
+<details><summary><strong>Learn more about logging</strong></summary>
+
+> A [twelve-factor app[(https://12factor.net/logs)] never concerns itself with routing or storage of its output stream. It should not attempt to write to or manage logfiles. Instead, each running process writes its event stream, unbuffered, to `stdout`. During local development, the developer will view this stream in the foreground of their terminal to observe the app’s behavior.
+
+> In staging or production deploys, each process’ stream will be captured by the execution environment, collated together with all other streams from the app, and routed to one or more final destinations for viewing and long-term archival. These archival destinations are not visible to or configurable by the app, and instead are completely managed by the execution environment.
+
+### Motivation to instrument logging in your code
+
+> Diagnostic logging records events related to the application’s operation. If a user calls in to report an error, for example, the logs can be searched for context.
+
+> Audit logging records events for business analysis. A user’s transactions can be extracted and combined with other user details for reports or to optimize a business goal.
+
+[The Hitchhiker's Guide to Python: Logging](https://docs.python-guide.org/writing/logging/)
+
+</details>
+
 ## Start Test Driven Development
 
 ### Red-Green-Refactoring.
