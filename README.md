@@ -313,6 +313,16 @@ These are the 5 steps:
    1. run test - if fails continue to refactor till it passes
 1. rinse, lather, repeat.
 
+### Sometimes tests expect exctpions so how to make them not fail.
+
+How to properly assert that an exception gets raised in pytest?
+
+According to this [Stackoverflow post](https://stackoverflow.com/questions/23337471/how-to-properly-assert-that-an-exception-gets-raised-in-pytest) Pytest has 2 ways to accomadate this:
+
+1. Using `pytest.raises` is likely to be better for cases where you are testing exceptions your own code is deliberately raising
+
+1. using `@pytest.mark.xfail` with a check function is probably better for something like documenting unfixed bugs (where the test describes what "should" happen) or bugs in dependencies.
+
 ## Foot notes
 
 [5] Project management tool include:
