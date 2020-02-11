@@ -323,6 +323,123 @@ According to this [Stackoverflow post](https://stackoverflow.com/questions/23337
 
 1. using `@pytest.mark.xfail` with a check function is probably better for something like documenting unfixed bugs (where the test describes what "should" happen) or bugs in dependencies.
 
+
+## Mocking used with unit-tests
+
+
+> ***In short, mocking is creating objects that simulate the behavior of real objects.***
+
+> ***mocking is to simplify and limit what you are testing and also make you feed what a class depends on.***
+
+> So, `avoid testing the network calls themselves, and instead test whether or not your app works as you expect with the injected outputs/responses` —— by mocking classes
+
+<details><summary><strong>Interested? Learn more ...</strong></summary>
+
+> Mocking is primarily used in unit testing. An object under test may have dependencies on other (complex) objects. To isolate the behavior of the object you want to replace the other objects by mocks that simulate the behavior of the real objects. This is useful if the real objects are impractical to incorporate into the unit test. 
+
+[quoted from Stack overflow- What is mocking, learn even more ...](https://stackoverflow.com/questions/2665812/what-is-mocking)</details>
+
+### Pytest - introducing `fixtures`
+
+Repeatable operation, not particularly part of your test - setup, clean/ teardown, startup etc.
+
+```python
+
+@pytest.fixture(param)
+def setup_db():
+   print(f'connect to db')
+   conn = db_mod.connect()
+   yeild conn
+   print(f'diconnect from db')
+   conn.disconnect(
+
+def test_db_con(setup_db):
+   db_obj = setup_db
+   user_info = db_obj.get_dta(id=42)
+   assert user_info['name'] == 'Alice'
+
+   ```
+
+
+### Pytest - built in fixtures ( many built in)
+```bash
+ pytest --fixtures
+#many ommitted 
+...
+monkeypatch
+...
+```
+
+### Key fixture for Mocking - introducing `monkeypatch`
+
+> dynamicall replace def of attributres
+at run time, do it carefully because chaning behaviour at run time
+makes tests simpler and predicatable
+
+```python
+
+def get_full_name(fname, lname):
+   print(f'Real get full name {fname} {lname}')
+
+get_full_name('Humfrey','Bogart')
+>> Real get full name HB
+
+def fake_name(fname, lname):
+   print(f'FAKE get full name {fname} {lname}')
+
+#assing functions ( as they are variables)
+#changing behaviour at run time
+get_full_name = fake_name
+get_full_name('Sigmund','Freud')
+>> FAKE get full name SF
+
+```
+
+```python
+m = MonkeyPatch():
+   try:
+    yeild m
+   finally:
+      m.undo()
+#actual def
+```
+
+there a few attributes of `monkeypatch object`
+ref
+
+methods 
+```python
+monkeypatch.setattr(obj, name, value, raising=True)
+monkeypatch.delattr(obj, name, raising=True)
+monkeypatch.setitem(mapping, name, value)
+monkeypatch.deltiem(obj, name, raising=True)
+monkeypatch.setenv(name, value, prepend=True))
+monkeypatch.delenv(name, raising=True)
+monkeypatch.syspatch_prepend(path)
+monkeypatch.chdir(path)
+```
+
+```python
+def test_get_greeting_message(monkeypatch):
+   monkeypatch.setattr( greeting.db_mod, "get_user_name", lambda: `Charlie`)
+
+   # whatever id get's passed we always predictable retrun `Charlie`
+
+   ```
+
+   setenv - alter ENV variables
+
+   setitem - add to {}
+
+   
+
+[YouTube Video - Unit testing using monkey patching in pytest - by Vikram Bhat](https://www.youtube.com/watch?v=sZMOJ9SLJf4)
+
+
+
+
+
+
 ## Foot notes
 
 [5] Project management tool include:
