@@ -431,11 +431,11 @@ def test_get_greeting_message(monkeypatch):
 
    setitem - add to {}
 
-   
+
 
 [YouTube Video - Unit testing using monkey patching in pytest - by Vikram Bhat](https://www.youtube.com/watch?v=sZMOJ9SLJf4)
 
-
+![Vikram Bhat references](doc/images/python-monkeypatching-pytest-referenced.png)
 
 
 
