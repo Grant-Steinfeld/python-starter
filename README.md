@@ -1,6 +1,6 @@
 # Modern Python3 Boilerplate with tooling
 
-This is a template  to start a python project using a Test Driven Development (TDD) approach
+This is a template to start a python project using a Test Driven Development (TDD) approach
 
 ## Install the pre-requisites
 
@@ -291,7 +291,7 @@ Logs provide visibility into the behavior of a running app. Logs are the stream 
 
 There are 5 basic steps as illustrated in Figure 1. below.
 
-![5 steps Red-Green-Refactor cycle of Test Driven Devlopment](./doc/images/tdd-red-green-refactoring-v2.jpeg)
+![5 steps Red-Green-Refactor cycle of Test Driven Devlopment](./doc/images/tdd-red-green-refactoring-v8.jpg)
 
 **_Figure 1. The 5 stages in the Red-Green-Refactor software development cycle_**
 
