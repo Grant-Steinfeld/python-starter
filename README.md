@@ -453,6 +453,21 @@ so we can't test that, here is where mocking is important.
 
 Take a look at `tests/unit/test_mocks.py` and `tests/conftest.py`
 
+First setup 'mock data' for example a weather data call made a while ago
+see [test_mocks.py here](https://github.com/Grant-Steinfeld/python-starter/blob/007-monkeypatch/tests/unit/test_mocks.py#L5)
+
+Then note in `conftest.py` we monkeypatch `urllib` `urlopen()` to the `weather` key to have 2 functions
+[read()](https://github.com/Grant-Steinfeld/python-starter/blob/007-monkeypatch/tests/conftest.py#L13)
+and [raise_exception()](https://github.com/Grant-Steinfeld/python-starter/blob/007-monkeypatch/tests/conftest.py#L10)
+
+The [magic](https://github.com/Grant-Steinfeld/python-starter/blob/007-monkeypatch/tests/conftest.py#L34-L38) happens when we map `app` from `src.services` and use the monkeypatch `setattr` to re-map it's `urlopen`
+to the [urlopen()](https://github.com/Grant-Steinfeld/python-starter/blob/007-monkeypatch/tests/conftest.py#L22)
+in conftest.py
+
+Note the assertations have to be setup against mock data as this data WILL change, see the
+[assert](https://github.com/Grant-Steinfeld/python-starter/blob/007-monkeypatch/tests/unit/test_mocks.py#L11-L15)
+statements
+
 in `conftest.py` we setup a pytest fixture to allow for the mocking of data.
 the key here is we test the function `urlopen()` as that is what is likely to change.
 
