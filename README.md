@@ -1,6 +1,6 @@
 # Modern Python3 Boilerplate with tooling
 
-This is a template  to start a python project using a Test Driven Development (TDD) approach
+This is a template to start a python project using a Test Driven Development (TDD) approach
 
 ## Install the pre-requisites
 
@@ -323,19 +323,17 @@ According to this [Stackoverflow post](https://stackoverflow.com/questions/23337
 
 1. using `@pytest.mark.xfail` with a check function is probably better for something like documenting unfixed bugs (where the test describes what "should" happen) or bugs in dependencies.
 
-
 ## Mocking used with unit-tests
 
+> **_In short, mocking is creating objects that simulate the behavior of real objects._**
 
-> ***In short, mocking is creating objects that simulate the behavior of real objects.***
-
-> ***mocking is to simplify and limit what you are testing and also make you feed what a class depends on.***
+> **_mocking is to simplify and limit what you are testing and also make you feed what a class depends on._**
 
 > So, `avoid testing the network calls themselves, and instead test whether or not your app works as you expect with the injected outputs/responses` —— by mocking classes
 
 <details><summary><strong>Interested? Learn more ...</strong></summary>
 
-> Mocking is primarily used in unit testing. An object under test may have dependencies on other (complex) objects. To isolate the behavior of the object you want to replace the other objects by mocks that simulate the behavior of the real objects. This is useful if the real objects are impractical to incorporate into the unit test. 
+> Mocking is primarily used in unit testing. An object under test may have dependencies on other (complex) objects. To isolate the behavior of the object you want to replace the other objects by mocks that simulate the behavior of the real objects. This is useful if the real objects are impractical to incorporate into the unit test.
 
 [quoted from Stack overflow- What is mocking, learn even more ...](https://stackoverflow.com/questions/2665812/what-is-mocking)</details>
 
@@ -358,13 +356,13 @@ def test_db_con(setup_db):
    user_info = db_obj.get_dta(id=42)
    assert user_info['name'] == 'Alice'
 
-   ```
-
+```
 
 ### Pytest - built in fixtures ( many built in)
+
 ```bash
  pytest --fixtures
-#many ommitted 
+#many ommitted
 ...
 monkeypatch
 ...
@@ -373,8 +371,8 @@ monkeypatch
 ### Key fixture for Mocking - introducing `monkeypatch`
 
 > dynamicall replace def of attributres
-at run time, do it carefully because chaning behaviour at run time
-makes tests simpler and predicatable
+> at run time, do it carefully because chaning behaviour at run time
+> makes tests simpler and predicatable
 
 ```python
 
@@ -407,7 +405,8 @@ m = MonkeyPatch():
 there a few attributes of `monkeypatch object`
 ref
 
-methods 
+methods
+
 ```python
 monkeypatch.setattr(obj, name, value, raising=True)
 monkeypatch.delattr(obj, name, raising=True)
@@ -425,20 +424,37 @@ def test_get_greeting_message(monkeypatch):
 
    # whatever id get's passed we always predictable retrun `Charlie`
 
-   ```
+```
 
-   setenv - alter ENV variables
+setenv - alter ENV variables
 
-   setitem - add to {}
-
-
+setitem - add to {}
 
 [YouTube Video - Unit testing using monkey patching in pytest - by Vikram Bhat](https://www.youtube.com/watch?v=sZMOJ9SLJf4)
 
 ![Vikram Bhat references](doc/images/python-monkeypatching-pytest-referenced.png)
 
+### Monkey patching in practice
 
+To illustrate this we will now turn our boilerplate into a simple Weather Microservice.
 
+First we add a new file `src/services/app.py` which calls the api with `urllib`
+
+Register and get a free API key at https://openweathermap.org/api
+
+Export it as an Environment varialbe such:
+
+```bash
+export OPEN_WEATHER_API_KEY=<key>
+```
+
+we can test the real api, but bear in mind some data will change ( e.g. temperature or humidity etc )
+so we can't test that, here is where mocking is important.
+
+Take a look at `tests/unit/test_mocks.py` and `tests/conftest.py`
+
+in `conftest.py` we setup a pytest fixture to allow for the mocking of data.
+the key here is we test the function `urlopen()` as that is what is likely to change.
 
 ## Foot notes
 
