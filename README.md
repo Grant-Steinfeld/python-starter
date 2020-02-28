@@ -140,7 +140,12 @@ pipenv shell
 To exit the `Pipenv` Python Virtual environment simply type `exit`
 
 
+### Pipenv file can be exported to a requirements.txt :)
+```sh
+pipenv run pipenv_to_requirements -f
+```
 
+Learn more about the converter: [docs](https://pypi.org/project/pipenv-to-requirements/)
 
 
 # License
