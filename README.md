@@ -2,6 +2,52 @@
 
 This is a template to start a python project using a Test Driven Development (TDD) approach
 
+## How to use this repo?
+
+a) FastTrack: Just clone and use the master branch to get started right away.
+
+> Pro tip: Use the Green `Use this Template` button to fork this repo to your github account and build your awesome Python3 application based of that.  Note this will only fork the `master` branch.
+
+b) LearningTrack: Clone this repo then progressively do a git checkout on all the branhes in their numerical sort order
+
+i.e.
+
+```bash
+# clone this repo
+git clone https://github.com/Grant-Steinfeld/python-starter.git
+
+#fetch all remote branches
+git fetch --all
+
+# start at 001 - setup directory structures and essential scaffolding
+git checkout 001-setup-tooling
+
+# learn about python virtual environments and in particular the awesome alternative to venv, enter Pipenv!
+git checkout 002-pipenv
+
+# setup Pytest testing framework, really the best option when testing Python, much better than the built in unittest library
+git checkout 003-pytest
+
+# setup linters and formatters - introducing Black, Black-Bugbear and Prettier
+git checkout 004-style-tools
+
+# setup python logging with standard python logging library
+git checkout 005b-logger
+
+# setup git pre commit hooks to prevent commiting and hence pushing incorrect syntax and poor formatting to git
+git checkout 005-git-pre-commit-hook
+
+# start to write tests first and get on your way to been an awesome TDD developer!
+git checkout 006-start-tdd
+
+# deep dive into mocks in pytest by learning howto use the Monkey Patch technique!
+git checkout 007-monkeypatch
+
+# after all said and done, all these branches rollup to the master branch
+git checkout master
+
+```
+
 ## Install the pre-requisites
 
 1. Python version 3
