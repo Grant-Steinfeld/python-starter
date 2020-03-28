@@ -6,7 +6,7 @@ This is a template to start a python project using a Test Driven Development (TD
 
 a) FastTrack: Just clone and use the master branch to get started right away.
 
-> Pro tip: Use the Green `Use this Template` button to fork this repo to your github account and build your awesome Python3 application based of that.  Note this will only fork the `master` branch.
+> Pro tip: Use the Green `Use this template` button to fork this repo to your github account and build your awesome Python3 application based of that.  Note this will only fork the `master` branch.
 
 b) LearningTrack: Clone this repo then progressively do a git checkout on all the branhes in their numerical sort order
 
