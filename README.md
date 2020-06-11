@@ -162,7 +162,7 @@ export PIPENV_VENV_IN_PROJECT=1
 
 ### Creating a new Pipenv Python3 Virtual Environment
 
-At your command line `cd` to the `root directory` of the currency exchange.
+At your command line `cd` to the `root directory` of your application, in this case an example: `currency exchange`.
 
 ```sh
 cd src/currencyexchange
