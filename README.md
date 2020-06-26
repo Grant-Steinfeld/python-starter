@@ -155,17 +155,22 @@ Ordinarilly, by default, the `pipenv` virutal enviroments is written to a global
 So never fear!
 
 ```sh
-
+# unix/mac
 export PIPENV_VENV_IN_PROJECT=1
 # save this line to your ~/.bashrc or ~/.zshrc or equivalent
 ```
 
+```powershell
+$env:PIPENV_VENV_IN_PROJECT=1
+```
+
+
 ### Creating a new Pipenv Python3 Virtual Environment
 
-At your command line `cd` to the `root directory` of your application, in this case an example: `currency exchange`.
+At your command line `cd` to the `root directory` of your application
 
 ```sh
-cd src/currencyexchange
+#install 
 pipenv install --three
 ```
 
