@@ -154,12 +154,14 @@ Ordinarilly, by default, the `pipenv` virutal enviroments is written to a global
 
 So never fear!
 
+#### unix/mac
 ```sh
-# unix/mac
+
 export PIPENV_VENV_IN_PROJECT=1
 # save this line to your ~/.bashrc or ~/.zshrc or equivalent
 ```
 
+#### PowerShell on Windows 10
 ```powershell
 $env:PIPENV_VENV_IN_PROJECT=1
 ```
