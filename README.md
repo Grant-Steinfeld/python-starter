@@ -28,7 +28,7 @@ git checkout 002-pipenv
 # setup Pytest testing framework, really the best option when testing Python, much better than the built in unittest library
 git checkout 003-pytest
 
-# setup linters and formatters - introducing Black, Black-Bugbear and Prettier
+# setup linters and formatters - introducing Flake8, Flake8-Bugbear and Prettier
 git checkout 004-style-tools
 
 # setup python logging with standard python logging library
@@ -241,16 +241,6 @@ pytest tests/unit/test_sample.py
 
 > [Flake8](https://flake8.pycqa.org/en/latest/index.html), by default it includes lint checks provided by the PyFlakes project, PEP-0008 inspired style checks provided by the PyCodeStyle project, and McCabe complexity checking provided by the McCabe project. It will also run third-party extensions if they are found and installed.
 
-</details>
-
-`Black` is a Python formatting tool.
-
-<details><summary><strong>learn more about Black</strong></summary>
-> By using Black, you agree to cede control over minutiae of hand-formatting. In return, Black gives you speed, determinism, and freedom from pycodestyle nagging about formatting. You will save time and mental energy for more important matters.
-
-> Black makes code review faster by producing the smallest diffs possible. Blackened code looks the same regardless of the project you’re reading. Formatting becomes transparent after a while and you can focus on the content instead.
-
-[Read the Black documentation](https://black.readthedocs.io/en/stable/) for more information
 
 </details>
 
@@ -260,7 +250,7 @@ To install these:
 pipenv install --dev flake8 black==19.10b0
 ```
 
-### Version Control Integration - black + flake8 with git pre-commit hooks
+### Version Control Integration - flake8 with git pre-commit hooks
 
 Git hook scripts are useful for identifying simple issues before submission to code review.
 
